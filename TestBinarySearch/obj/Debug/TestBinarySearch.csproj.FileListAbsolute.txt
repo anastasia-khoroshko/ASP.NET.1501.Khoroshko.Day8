@@ -1,0 +1,7 @@
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\bin\Debug\TestBinarySearch.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\bin\Debug\TestBinarySearch.pdb
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\bin\Debug\BinarySearch.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\bin\Debug\BinarySearch.pdb
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\obj\Debug\TestBinarySearch.csprojResolveAssemblyReference.cache
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\obj\Debug\TestBinarySearch.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\TestBinarySearch\obj\Debug\TestBinarySearch.pdb

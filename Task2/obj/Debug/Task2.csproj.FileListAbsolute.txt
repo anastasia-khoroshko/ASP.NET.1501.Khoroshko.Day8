@@ -1,0 +1,5 @@
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task2\bin\Debug\Task2.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task2\bin\Debug\Task2.pdb
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task2\obj\Debug\Task2.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task2\obj\Debug\Task2.pdb
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache

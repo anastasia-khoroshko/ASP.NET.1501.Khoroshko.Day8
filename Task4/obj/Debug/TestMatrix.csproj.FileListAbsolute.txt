@@ -1,0 +1,7 @@
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\bin\Debug\Task4.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\bin\Debug\Task4.pdb
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\bin\Debug\Matrix.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\bin\Debug\Matrix.pdb
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\obj\Debug\TestMatrix.csprojResolveAssemblyReference.cache
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\obj\Debug\Task4.dll
+C:\Users\User\documents\visual studio 2013\Projects\ASP.NET.1501.Khoroshko.Day8\Task4\obj\Debug\Task4.pdb
