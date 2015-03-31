@@ -42,6 +42,7 @@
     <Compile Include="DiagonalMatrix.cs" />
     <Compile Include="ExtentedMethod.cs" />
     <Compile Include="IndexesEventArgs.cs" />
+    <Compile Include="ISquareMatrix.cs" />
     <Compile Include="SimmetricMatrix.cs" />
     <Compile Include="SquareMatrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

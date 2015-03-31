@@ -10,73 +10,76 @@ namespace Task1
     public class CustomQueue<T>:IEnumerable<T>,IEnumerable
     {
         private T[] q;
-        private int head, tail, capacity, size;
+        private int head, tail;
         private const int defaultCapacity = 3;
-        public int Count
-        {
-            get
-            {
-                return this.size;
-            }
-        }
+        public int Count { get; private set; }
             public int Length
             {
                 get
                 {
-                    return this.capacity;
+                    return q.Length;
                 }
             }
 
             public CustomQueue()
             {
-                this.capacity = defaultCapacity;
-                this.q = new T[defaultCapacity];
-                this.size = 0;
-                this.head = -1;
-                this.tail = 0;
+                Count = 0;
+                q = new T[defaultCapacity];
+                head = -1;
+                tail = 0;
             }
 
             public CustomQueue(CustomQueue<T> ob)
             {
-                size = ob.size;
                 head = ob.head;
                 tail = ob.tail;
-                q = new T[size];
-                for (int i = 0; i < size; i++)
+                q = new T[ob.Count];
+                for (int i = 0; i < ob.Count; i++)
                     q[i] = ob.q[i];
             }
             public void Enqueuee(T elem)
             {
-                if (this.size == this.capacity)
+                if (Length==Count)
                 {
-                    T[] newQueuee = new T[capacity * 2];
-                    Array.Copy(this.q, 0, newQueuee, 0, size);
-                    q = newQueuee;
-                    capacity *= 2;
-                    size++;
-                    q[tail++ % capacity] = elem;
+                    ChangeSize(Count*2);
                 }
-                else
+                    Count++;
+                    q[tail++%Length] = elem;
+                    if (tail > Length) tail = 1;
+            }
+
+            private void ChangeSize(int p)
+            {
+                if (p < Count)
+                    throw new ArgumentException("Invalid size");
+                T[] newQueuee = new T[p];
+                for (int i = 0; i < Count;i++ )
                 {
-                    size++;
-                    q[tail++ % capacity] = elem;
+                    if (head < Length - 1) head++;
+                    else head = 0;
+                    newQueuee[i] = q[head];                    
                 }
+                q = newQueuee;
+                head = -1;
+                tail = Count;
             }
 
             public T Dequeuee()
             {
-                if (this.size == 0)
+                if (Count == 0)
                     throw new InvalidOperationException();
                 else
                 {
-                    size--;
-                    return q[++head % capacity];
+                    Count--;
+                    T returnValue = q[++head % Length];
+                    q[head] = default(T);
+                    return returnValue ;
                 }
             }
             
             public T Peek()
             {
-                if (this.size == 0)
+                if (Count == 0)
                     throw new InvalidOperationException();
                 else
                 {
@@ -85,13 +88,53 @@ namespace Task1
             }
             public IEnumerator<T> GetEnumerator()
             {
-                while(size>0)
-                    yield return Dequeuee();
+                return new CustomEnumerator(this);
             }
 
             System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
             {
                 return (IEnumerator)GetEnumerator();
+            }
+
+            public class CustomEnumerator:IEnumerator<T>
+            {
+            private readonly CustomQueue<T> collection;
+            private int currentIndex;
+            private int currentCount;
+
+            internal CustomEnumerator(CustomQueue<T> collection)
+            {
+                this.currentIndex = collection.head;
+                this.collection = collection;
+                this.currentCount = 0;
+            }
+
+            public T Current
+            {
+                get
+                {
+                    currentIndex = currentIndex >= collection.Length - 1 ? 0 : ++currentIndex;
+                    return collection.q[currentIndex];
+                }
+            }
+
+            public void Reset()
+            {
+                currentIndex = collection.head;
+            }
+
+            public bool MoveNext()
+            {
+                return ++currentCount <= collection.Count;
+            }
+
+
+            public void Dispose() { }
+
+            object IEnumerator.Current
+            {
+                get { throw new NotImplementedException(); }
+            }
             }
     }
 }

@@ -9,16 +9,16 @@ namespace Matrix
 {
     public static class ExtentedMethod
     {
-         public static SquareMatrix<T> SumMatrix<T>(this SquareMatrix<T>m1 ,SquareMatrix<T> m2)
+         public static ISquareMatrix<T> SumMatrix<T>(this ISquareMatrix<T>m1 ,ISquareMatrix<T> m2)
         {
-            SquareMatrix<T> result;
+            ISquareMatrix<T> result;
             if (ReferenceEquals(m1, null) || ReferenceEquals(m2, null)) 
                 throw new ArgumentNullException();
-            if ((m1.Size==m2.Size)||(m1.GetType()==m2.GetType()))
+            if ((m1.Size==m2.Size))
             {
-                if (m1 is DiagonalMatrix<T>) 
-                    result = new DiagonalMatrix<T>(m1.Size);
-                else if (m1 is SimmetricMatrix<T>) 
+                if (m1 is DiagonalMatrix<T> && m2 is DiagonalMatrix<T>) 
+                    result = new SquareMatrix<T>(m1.Size);
+                else if (m1 is SimmetricMatrix<T> && m2 is SimmetricMatrix<T>) 
                     result = new SimmetricMatrix<T>(m1.Size);
                 else 
                     result = new SquareMatrix<T>(m1.Size);

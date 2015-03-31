@@ -15,8 +15,13 @@ namespace Task1UI
             ob.Enqueuee(3);
             ob.Enqueuee(2);
             ob.Enqueuee(1);
+            ob.Dequeuee();
             ob.Enqueuee(9);
+            foreach (var t in ob)
+                Console.WriteLine(t);
             ob.Enqueuee(7);
+            ob.Enqueuee(8);
+            ob.Enqueuee(1);
             Console.WriteLine("Head:");
             Console.WriteLine(ob.Peek());
             Console.WriteLine("Queue:");
@@ -30,7 +35,6 @@ namespace Task1UI
             ob1.Enqueuee('e');
             Console.WriteLine("Head:");
             Console.WriteLine(ob1.Peek());
-            ob1.Dequeuee();
             Console.WriteLine("Queue:");
             foreach (var t in ob1)
                 Console.WriteLine(t);

@@ -13,6 +13,7 @@ namespace Task2
         public IEnumerable<int> GetNumber(int n)
         {
             if (n < 0) throw new ArgumentException("Couldn't get a Fibonachi numbers with this argument!");
+            if (n == 0) yield break;
             array = new int[n];
             for (int i=0;i<n;i++)
             {

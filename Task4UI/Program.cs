@@ -13,25 +13,25 @@ namespace Task4UI
     {
         static void Main(string[] args)
         {
-            SquareMatrix<double> sq = new SquareMatrix<double>(2);
+            SquareMatrix<int> sq = new SquareMatrix<int>(3);
             sq.Register();
-            for (int i = 0; i < 2; i++)
-                for (int j = 0; j < 2; j++)
+            for (int i = 0; i <sq.Size; i++)
+                for (int j = 0; j < sq.Size; j++)
                     sq[i, j] = 1;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < sq.Size; i++)
             {
                 Console.WriteLine();
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < sq.Size; j++)
                     Console.Write(sq[i, j]);
             }
 
-            DiagonalMatrix<int> m = new DiagonalMatrix<int>(5);
+            DiagonalMatrix<int> m = new DiagonalMatrix<int>(3);
             m.Register();
             int s=1;
             try
             {
-                for (int i = 0; i < 5; i++)
-                    for (int j = 0; j < 5; j++)
+                for (int i = 0; i < m.Size; i++)
+                    for (int j = 0; j < m.Size; j++)
                         if(i==j)
                         m[i, j] = s++;
             }
@@ -40,27 +40,14 @@ namespace Task4UI
                 Console.WriteLine(ex.Message);
             }
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < m.Size; i++)
             {
                 Console.WriteLine();
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < m.Size; j++)
                     Console.Write(m[i, j]);
             }
 
-            DiagonalMatrix<int> d = new DiagonalMatrix<int>(5);
-            d.Register();
-            try
-            {
-                for (int i = 0; i < 5; i++)
-                    for (int j = 0; j < 5; j++)
-                        if (i == j)
-                            d[i, j] = s++;
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            var x = ExtentedMethod.SumMatrix<int>(m,d);
+            var x = ExtentedMethod.SumMatrix<int>(sq,m);
             SimmetricMatrix<float> sm = new SimmetricMatrix<float>(5);
             sm.Register();
             try
